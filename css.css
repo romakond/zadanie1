@@ -1,0 +1,127 @@
+.hd {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 5px;
+    margin-right: 12px;
+}
+.hddiv {   
+       
+   margin:5px 5px 5px 5px;       
+          
+}
+.hddiv:hover{
+    text-decoration: underline;
+
+
+}
+.item:hover{
+    color: black;
+}
+.mid {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 150px;
+    height:25% ;
+        
+}
+.im {
+    box-shadow: 0 2px 1px 1px rgba(71, 58, 58, 0.2);
+    width: 550px ;
+    border:  none;
+    }
+.inputer{
+    margin-top:28px;
+    height:40px ;
+    display: flex;
+    justify-content: center;
+   }
+
+   .btn{
+
+    margin-top:28px;
+    height:40px ;
+    display: flex;
+    justify-content: center;
+    color: #757575;
+   
+   }
+   .stbtn{
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    height: 36px;
+    line-height: 27px;
+    padding: 0 16px;
+    text-align: center;
+    cursor: pointer;
+    margin: 7px;
+    color: #757575;  
+    font-weight: bold; 
+
+   }
+   .stbtn:hover{
+       color: black;
+       border: 1px solid darkgrey;
+   }
+   a{
+       color: darkgrey;
+       text-decoration: none;
+
+   }
+   .footer
+   {
+    position: fixed;
+    left: 0; bottom: 0; 
+    width: 100%;
+    text-align: left;
+    color: rgba(0,0,0,.54);
+    padding-left: 27px;
+    background: #f2f2f2;
+    font-family: arial,sans-serif;
+    
+    
+   }
+
+
+   body{
+       display:flex;
+       flex-direction: column;
+       height: 100%;
+       margin: 0;
+       padding: 0;
+
+       
+   }
+   .end{
+       display: flex;
+       justify-content: center;
+       border-color: rgb(59, 40, 40);
+       padding-bottom: 7px;
+       border-top: 1px solid #e4e4e4;
+       font-size: 14px;
+       color:#222222;
+   }
+
+   .ftrmenu{
+      margin-right: 7px;
+      margin-bottom: 3px;      
+
+   }
+   .ftrmenu:hover{
+       text-decoration: underline;
+
+   }
+   .empty{
+       flex-grow:1;
+
+   }
+   .sgn{
+       background-color: #4285f4;
+       padding: 7px 12px;
+       border-radius: 6%;
+       color:white;
+      
+       font-weight: bold; 
+       
+   }
