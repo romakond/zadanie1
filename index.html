@@ -6,6 +6,7 @@
  
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <link rel="stylesheet" href="css.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +14,34 @@
     <title>Document</title>
 </head>
 <body>
+        <script src="animals.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+   
+    <script type="text/x-template" id="autocomplete-tpl">
+        <div class="autocomplete im">
+          <label :for="id">{{label}}</label>
+          <textarea v-if="textarea" :id="id" :rows="rows" :cols="cols" class="autocomplete-input" :placeholder="placeholder" @focusout="focusout" @focus="focus" @keydown.13="chooseItem" @keydown.tab="chooseItem" @keydown.40="moveDown" @keydown.38="moveUp" v-model="inputValue"
+            type="text"></textarea>
+          <input v-else :id="id" class="autocomplete-input" :placeholder="placeholder" @focusout="focusout" @focus="focus" @keydown.13="chooseItem" @keydown.tab="chooseItem" @keydown.40="moveDown" @keydown.38="moveUp" v-model="inputValue" type="text">
+    
+    
+          <ul :class="{
+            'autocomplete-list': true,
+            [id+'-list']: true
+          }" v-if="searchMatch.length > 0">
+            <li :class="{active: selectedIndex === index}" v-for="(result, index) in searchMatch" @click="selectItem(index), chooseItem()" v-html="highlightWord(result)">
+    
+            </li>
+          </ul>
+        </div>
+    </script>
+
     <div class="content">
     <div class="hd"> 
 <a class="hddiv" href="#">Gmail</a>
 <a class="hddiv" href="#">Grafika</a>
 <a class="hddiv item" href="#"><i class="fa fa-th" aria-hidden="true"></i></a>
-<a class="hddiv sgn mdc-button animat" href="#">Zaloguj się</a>
+<a class="hddiv sgn mdc-ripple-surface animat" href="#">Zaloguj się</a>
 
   
     </div>
@@ -34,16 +56,28 @@
     <div class="inputer">
             <i class="fa fa-search ico serico" aria-hidden="true"></i>
             
-            <div class=""><input class="im" type="text"></div>
             
+               <div id="app">
+
+                
+               
+               
+                  
+                   <autocomplete/>
+                  
+               
+
+    
+               </div>
+              
            <i class="fa fa-keyboard ico" aria-hidden="true"> </i> 
            <i class="fa fa-microphone ico" aria-hidden="true"></i>
            
     </div>
 
     <div class="btn">
-        <button class="mdc-button stbtn animat">Szukaj w Google</button>
-        <button class="mdc-button stbtn animat">Szczesliwy traf</button>
+        <button class="mdc-ripple-surface stbtn animat">Szukaj w Google</button>
+        <button class="mdc-ripple-surface stbtn animat">Szczesliwy traf</button>
        
     </div>
     
@@ -62,13 +96,14 @@
 
     </div>
     </div>
-
+    <script src="js.js"></script>
   <script>
             const elements = document.querySelectorAll('.animat');
             for (const element of elements) {
                 mdc.ripple.MDCRipple.attachTo(element);
             }
      </script>
- 
+     
+      
  </body>
 </html>   
