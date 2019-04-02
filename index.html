@@ -11,7 +11,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Google</title>
 </head>
 <body>
         <script src="animals.js"></script>
@@ -32,25 +32,28 @@
   
    
     <div class="main mid">
-        <img src="https://www.google.pl/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"/></br></br>
+       <div> <img src="https://www.google.pl/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"/></br></br>
         <div class="inputer">
             <i class="fas fa-search" style="color: blue; cursor: pointer"></i>
             <input v-model="inputContent"/>
             <span class="access_icons">
                 <i class="fas fa-keyboard"></i>
                 <i class="fas fa-microphone" style="color: blue"></i>
-            </span><br />
-            
+            </span><br />          
+        </div>
+                <div> 
+               <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
+                </div>
         </div>
     </span><br />
             
-        <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
+        
           
     </div>
     
 
     <div class="btn main">
-        <button class="mdc-ripple-surface stbtn animat " v-if="!inputContent">Szukaj w Google</button>
+        <button class="mdc-ripple-surface stbtn animat " v-if="!inputContent" onclick="window.location.href='wyniki.html'" >Szukaj w Google</button>
         <button class="mdc-ripple-surface stbtn animat">Szczesliwy traf</button>
        
     </div>
