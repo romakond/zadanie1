@@ -25,6 +25,10 @@ Vue.component('v-autocompleter', {
 					return {
 							inputContent: "",
 							showAutocompleter: this.inputContent ? true : false
+							
 					}
 			}
+
 	})
+
+	

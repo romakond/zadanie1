@@ -43,20 +43,21 @@
         </div>
                 <div> 
                <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
+            </span><br />
+               <button class="mdc-ripple-surface stbtn animat" v-if="!inputContent"  onclick="window.location.href='wyniki.html#/Wszystko'" >Szukaj w Google</button>
+                <button class="mdc-ripple-surface stbtn animat" v-if="!inputContent" >Szczesliwy traf</button>
                 </div>
+                
         </div>
-    </span><br />
-            
+   
+    <div class="btn">
         
-          
+       
+    </div>                 
     </div>
     
-
-    <div class="btn main">
-        <button class="mdc-ripple-surface stbtn animat " v-if="!inputContent" onclick="window.location.href='wyniki.html'" >Szukaj w Google</button>
-        <button class="mdc-ripple-surface stbtn animat">Szczesliwy traf</button>
-       
-    </div>
+    
+    
     
 <p></p>
 </div>

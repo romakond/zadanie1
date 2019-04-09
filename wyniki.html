@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wyniki</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
- 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"> 
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <link rel="stylesheet" href="css.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
 </head>
 <body>
@@ -17,6 +17,7 @@
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <div class="hed2">
         <div class="logo2"></div>
+        <span> </span>
         <div class="imp2 main">
             
         <div class="inputer imputer2">
@@ -26,11 +27,12 @@
                 <i class="fas fa-keyboard"></i>
                 <i class="fas fa-microphone" style="color: blue"></i>
     </div>
-</span><br />
+
             
 <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
 </div>
 <br> 
+<div class="emptydiv"></div>
     <div class="hd2">
         <div class="hd">         
         <a class="hddiv item" href="#"><i class="fa fa-th" aria-hidden="true"></i></a>
@@ -38,70 +40,43 @@
         </div>
     </div>
 </div>
-
-<div class="resulcontent">
+ 
+<div id="app">
+                <hr>        
+<div  class="resulcontent">
         
     <nav>
-                <a class="blue_href" href="#">Wszystko</a>
-                <a href="#">Grafika</a>
-                <a href="#">Filmy</a>
-                <a href="#">Zakupy</a>
-                <a href="#">Wiadomości</a>
-                <a href="#">Więcej</a>
-                <a href="#">Ustawienia</a>
-                <a href="#">Narzędzia</a>
+        <router-link to="/Wszystko">Wszystko</router-link>
+        <router-link to="/Grafika">Grafika</router-link>
+        <router-link to="/Filmy">Filmy</router-link>
+        <router-link to="/Zakupy">Zakupy</router-link>
+        <router-link to="/Wiadomości">Wiadomości</router-link>
+        <router-link to="/Więcej">Więcej</router-link>
+        <router-link to="/Ustawienia">Ustawienia</router-link>
+        <router-link to="/Narzędzia">Narzędzia</router-link>
+          
         </nav>
+        
     <div class="num">
+                 
             Około 242 000 000 wyników (0,35 s) 
     </div>
+   
     </div>
-    <div class="resullinki">
-            <div class="temat">
-                   <a href="#"> Moduł WiFi ESP8266 + NodeMCU v3 - Sklep dla robotyków - Botland</a> 
-            </div>
-            <div class="linki_green">
-                    <a href="#">  https://www.x-kom.pl x-kom  Telefony i GPS  Akcesoria do dronów</a> 
-            </div>
-            <div class="opis">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore veniam adipisci, tempore incidunt, quidem iure dolorem mollitia qui dicta minus sunt. Ipsa itaque, consequuntur maiores minus quis dolores delectus voluptatem!
-            </div>
-        </div>
-        <div class="resullinki">
-                <div class="temat">
-                       <a href="#"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> 
-                </div>
-                <div class="linki_green">
-                        <a href="#">  https://www.x-kom.pl x-kom  Telefony i GPS  Akcesoria do dronów</a> 
-                </div>
-                <div class="opis">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae perferendis ab laudantium dolores perspiciatis quos eveniet enim, officia qui obcaecati officiis quisquam natus necessitatibus debitis ut reprehenderit rerum atque harum.
-                </div>
-            </div>
-            <div class="resullinki">
-                    <div class="temat">
-                           <a href="#"> Moduł WiFi ESP8266 + NodeMCU v3 - Sklep dla robotyków - Botland</a> 
-                    </div>
-                    <div class="linki_green">
-                            <a href="#">  https://www.x-kom.pl x-kom  Telefony i GPS  Akcesoria do dronów</a> 
-                    </div>
-                    <div class="opis">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae perferendis ab laudantium dolores perspiciatis quos eveniet enim, officia q
-                    </div>
-                </div>
-                <div class="resullinki">
-                        <div class="temat">
-                               <a href="#"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</a> 
-                        </div>
-                        <div class="linki_green">
-                                <a href="#">  https://www.x-kom.pl x-kom  Telefony i GPS  Akcesoria do dronów</a> 
-                        </div>
-                        <div class="opis">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae perferendis ab laudantium dolores perspiciatis quos eveniet enim, officia qui obcaecati officiis quisquam natus necessitatibus debitis ut reprehenderit rerum atque harum.
-                        </div>
-                    </div>
-    </div>
+    <router-view></router-view> 
+   
+   
+   
+   
+   
+   
+ </div>
 
+
+</div>
     <script src="js.js"></script>
+    <script src="js1.js"></script>
+    
     <script>
             const elements = document.querySelectorAll('.animat');
             for (const element of elements) {
@@ -112,9 +87,7 @@
 
 <style>
     .autocomplete-results{  
-
-margin: 0;
-left: 50px;
+        margin: 0;
     }
 </style>
 </body>
